@@ -1,3 +1,3 @@
-class NiseNicoController < ApplicationController
+class NiseNicosController < ApplicationController
   def index; end
 end

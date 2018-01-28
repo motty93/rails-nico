@@ -1,2 +1,2 @@
-module NiseNicoHelper
+module NiseNicosHelper
 end
