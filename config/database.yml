@@ -50,6 +50,6 @@ test:
 #
 production:
   <<: *default
-  database: nisenico_production
-  username: nisenico
-  password: <%= ENV['NISENICO_DATABASE_PASSWORD'] %>
+  database: <%= ENV['SCHEMA'] %> 
+  username: <%= ENV['USENAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
