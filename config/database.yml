@@ -13,9 +13,10 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
+  username: <%= ENV['USERNAME'] %>
+  password: <%= ENV['PASSWORD'] %>
   host: localhost
+  socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
@@ -49,6 +50,6 @@ test:
 #
 production:
   <<: *default
-  database: nisenico_production
-  username: nisenico
-  password: <%= ENV['NISENICO_DATABASE_PASSWORD'] %>
+  database: <%= ENV['SCHEMA'] %> 
+  username: <%= ENV['USENAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>

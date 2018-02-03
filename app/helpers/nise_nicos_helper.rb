@@ -1,0 +1,2 @@
+module NiseNicosHelper
+end
