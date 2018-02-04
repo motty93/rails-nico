@@ -80,6 +80,10 @@ p {
   font-weight: bold;
 }
 
+.no-action {
+  pointer-events: none;
+  opacity: 0.5;
+}
 
 // youtube responsive
 #nicoscreen {
