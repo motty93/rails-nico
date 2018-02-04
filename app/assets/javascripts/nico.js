@@ -1,16 +1,3 @@
-/*
- * NicoScreen, version: 0.1 (2011-07-11)
- *
- *
- * For usage and examples, visit:
- * http://nicoscreen.r9game.com
- *
- * Licensed under the MIT:
- * http://www.opensource.org/licenses/mit-license.php
- *
- * Copyright (c) 2011, Shikemoku.MK (shikemoku.mk -[at]- gmail [*dot*] com)
- */
-
 function nicoscreenobj(o) {
   var f = nicoscreenobj.f, i, len, n, prop;
   f.prototype = o;
@@ -173,21 +160,48 @@ r9.NicoScreen = {
 	
 };
 
-var nicoscreen = nicoscreenobj(r9.NicoScreen); // ここで宣言しないとnicoscreen.draw id not functionと怒られる
+var nicoscreen = nicoscreenobj(r9.NicoScreen); // ここで宣言しないとnicoscreen.draw is not functionと怒られる
 var postBtn = document.getElementById("post-btn");
 postBtn.onclick = function() {
-  comment = document.getElementById("comment").value;
-  document.getElementById("comment").value = '';
+  comment = document.getElementById("comment-form").value;
+  document.getElementById("comment-form").value = '';
   var obj = {
     "base": {
       color: "white",
       speed: "normal",
       interval: "normal",
       font_size: "20px",
-      loop: true
+      loop: false
     },
-    "comments": [comment]
+    "comments": [
+      comment,
+      "もっと評価されるべき",
+      "(　・∀・)ｲｲ!!ね",
+      "ずっと聞いていたい。。。",
+      "888888888888888888888888",
+//      "懐かしいなぁ",
+      "今日のプレゼン最高だなぁ",
+      "ライブ実装できなかったの残念だなぁ",
+      "ギター超うまい！！！"
+//      "指弾きすばらしいね",
+//      "最高です"
+    ]
   };
   nicoscreen.set(obj);
   nicoscreen.start();
+};
+
+var commentForm = document.getElementById("comment-form");
+commentForm.onchange = function() {
+  postBtn = document.getElementById("post-btn");
+  postBtn.classList.remove('no-action');
+};
+
+var nisenicoWindow = document.getElementsByClassName("nise-nico");
+window.onload = function () {
+  console.log(nisenicoWindow);
+  if (nisenicoWindow != null)
+  {
+    document.getElementById("comment-form").value = '';
+  }
 };

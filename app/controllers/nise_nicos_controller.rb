@@ -1,3 +1,5 @@
 class NiseNicosController < ApplicationController
-  def index; end
+  def index
+    # data = 
+  end
 end

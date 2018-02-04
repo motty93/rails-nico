@@ -32,7 +32,7 @@ gem 'jquery-ui-rails', '~> 5.0.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'therubyracer', platforms: :ruby
 gem 'guard-livereload', require: false
-
+gem 'websocket-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
