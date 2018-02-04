@@ -199,7 +199,6 @@ commentForm.onchange = function() {
 
 var nisenicoWindow = document.getElementsByClassName("nise-nico");
 window.onload = function () {
-  console.log(nisenicoWindow);
   if (nisenicoWindow != null)
   {
     document.getElementById("comment-form").value = '';
