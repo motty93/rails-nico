@@ -191,10 +191,22 @@ postBtn.onclick = function() {
   nicoscreen.start();
 };
 
+var stopButton = document.getElementById("stop-btn");
+stopButton.onclick = function() {
+  clearInterval(nicoscreen.start());
+};
+
 var commentForm = document.getElementById("comment-form");
 commentForm.onchange = function() {
   postBtn = document.getElementById("post-btn");
-  postBtn.classList.remove('no-action');
+  stopBtn = document.getElementById("stop-btn");
+  if (commentForm.value != null)
+  {
+    postBtn.classList.remove("no-action");
+  } else {
+    postBtn.classList.add("no-action");
+  }
+  //stopBtn.classList.remove("no-action");
 };
 
 var nisenicoWindow = document.getElementsByClassName("nise-nico");
