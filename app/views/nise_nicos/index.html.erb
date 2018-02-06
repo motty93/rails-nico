@@ -4,10 +4,10 @@
 
 <div class="row">
   <div class="col-md-4 col-md-offset-3">
-    <% iframe = content_tag(:iframe, '', width: 640, height: 390, src: 'https://www.youtube.com/embed/UeMNFTo0Fx0', frameborder: 0, allowfullscreen: true) %>
+    <% iframe = content_tag(:iframe, '', width: 640, height: 390, src: "https://www.youtube.com/embed/#{@movie}", frameborder: 0, allowfullscreen: true) %>
     <%= content_tag :div, iframe, id: 'nicoscreen' %>
   </div>
-  <div class="col-md-3">ここがコメント表示するところです</div>
+  <div class="col-md-3">ここがコメントするところです</div>
   <div class="comment-margin-top">
     <div class="col-md-4 col-md-offset-3"><%= text_field_tag :comment, '', placeholder: 'コメント', id: 'comment-form', class: 'form-control' %></div>
     <div class="col-md-1"><%= button_tag t('.post'), id: 'post-btn', class: 'btn btn-primary no-action' %></div>
